@@ -1,3 +1,3 @@
 pacman -Syu --noconfirm
 
-pacman -S --noconfirm aws-cli terraform neovim
+pacman -S --noconfirm base-devel aws-cli terraform neovim
