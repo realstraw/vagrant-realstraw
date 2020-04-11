@@ -9,12 +9,16 @@ pacman -S --noconfirm \
     neovim \
     git \
     zsh \
-    tmux
+    tmux \
+    nodejs yarn npm \
+    jdk8-openjdk \
+    fzf fd
 
 echo "Generating the script to configure vagrant user..."
 
 cat > configure_me << SCRIPT
 #!/usr/bin/env bash
+
 echo "Apply upstream configurations..."
 rm -rf upstream-src
 mkdir -p upstream-src
@@ -22,6 +26,10 @@ mkdir -p upstream-src
 echo "- Configuring tmux..."
 git clone git@github.com:realstraw/dot-tmux.git upstream-src/dot-tmux
 upstream-src/dot-tmux/bootstrap.sh
+
+echo "- Configuring nvim..."
+git clone git@github.com:realstraw/dot-nvim.git upstream-src/dot-nvim
+upstream-src/dot-nvim/bootstrap.sh
 SCRIPT
 
 chown vagrant:vagrant configure_me
