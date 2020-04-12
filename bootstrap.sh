@@ -1,4 +1,5 @@
 echo "Replace the mirrorlist..."
+# To make sure use the most up to date versions
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
 cp /vagrant/mirrorlist /etc/pacman.d/mirrorlist
 
