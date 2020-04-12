@@ -1,3 +1,7 @@
+echo "Replace the mirrorlist..."
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
+cp /vagrant/mirrorlist /etc/pacman.d/mirrorlist
+
 echo "Update everthing to the latest..."
 pacman -Syu --noconfirm
 
