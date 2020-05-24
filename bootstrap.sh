@@ -10,7 +10,7 @@ echo "Install the necessary packages..."
 pacman -S --noconfirm \
     base-devel \
     aws-cli \
-    terraform \
+    terraform packer \
     neovim \
     git \
     zsh \
