@@ -1,7 +1,10 @@
 echo "Replace the mirrorlist..."
 # To make sure use the most up to date versions
-mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.old
-cp /vagrant/mirrorlist /etc/pacman.d/mirrorlist
+mirrorlist_file="/etc/pacman.d/mirrorlist"
+if [ -f $mirrorlist_file ]; then
+    mv $mirrorlist_file ${mirrorlist_file}.old
+fi
+cp /vagrant/root${mirrorlist_file} ${mirrorlist_file}
 
 echo "Update everthing to the latest..."
 pacman -Syu --noconfirm
